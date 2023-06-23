@@ -1,0 +1,109 @@
+{
+  "name": "cbm-player",
+  "description": "CodeByMe Media Player",
+  "private": false,
+  "version": "0.0.0",
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "vite",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "build:example": "vite build --config vite.example.config.ts",
+    "build": "tsc && yarn build:library",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint": "yarn eslint",
+    "lint:fix": "yarn eslint --fix",
+    "lint:report": "yarn eslint --output-file eslint_report.json --format json src",
+    "format": "prettier --write src//**/*.{ts,tsx,css} --config ./.prettierrc.js",
+
+    "preview": "vite preview"
+  },
+  "files": [
+    "dist",
+    "src/components",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/cbm-player.es.js",
+      "require": "./dist/cbm-player.umd.js"
+    }
+  },
+  "main": "./dist/cbm-player.umd.js",
+  "module": "./dist/cbm-player.es.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamidfzm/cbm-player.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-components",
+    "react-library",
+    "react-player",
+    "react-video",
+    "react-audio",
+    "react-media",
+    "react-media-player",
+    "react-media-player-ui",
+    "react-media-player-ui-kit",
+    "react-media-player-ui-components",
+    "react-media-player-ui-library",
+    "react-media-player-ui-package",
+    "react-media-player-ui-module",
+    "react-media-player-ui-component",
+    "react-media-player-ui-element",
+    "react-media-player-ui-widget",
+    "react-media-player-ui-toolkit",
+    "react-media-player-ui-framework",
+    "react-media-player-ui-styles",
+    "react-media-player-ui-theme",
+    "react-media-player-ui-template"
+  ],
+  "author": "Hamid FzM <hamidfzm@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/hamidfzm/cbm-player/issues"
+  },
+  "homepage": "https://github.com/hamidfzm/cbm-player#readme",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.6",
+    "jotai": "^2.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "yt-player": "^3.6.1"
+  },
+  "peerDependenciesMeta": {
+    "yt-player": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@hamidfzm/eslint-config": "^0.6.1",
+    "@types/node": "^18.16.18",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@types/yt-player": "^3.5.1",
+    "@vitejs/plugin-react": "^4.0.1",
+    "eslint": "^8.43.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "typescript": "~5.0.4",
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-linter": "^2.0.2",
+    "vite-tsconfig-paths": "^4.2.0",
+    "yt-player": "^3.6.1"
+  }
+}
