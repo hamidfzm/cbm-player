@@ -6,9 +6,9 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
-    "build:lib": "vite build --config vite.lib.config.ts",
+    "build:lib": "vite build",
     "build:example": "vite build --config vite.example.config.ts",
-    "build": "tsc && yarn build:library",
+    "build": "tsc && yarn build:lib",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint": "yarn eslint",
     "lint:fix": "yarn eslint --fix",

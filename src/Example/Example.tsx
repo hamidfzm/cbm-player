@@ -2,6 +2,7 @@ import {
   Card,
   CardContent,
   Container as MuiContainer,
+  CssBaseline,
   Grid,
   styled,
   Typography,
@@ -15,23 +16,25 @@ import { sourceAtom } from './store';
 const Example = () => {
   const source = useAtomValue(sourceAtom);
   return (
-    <Container>
-      <Typography variant="h2" gutterBottom textAlign="center">
-        CBM Player Demo
-      </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={3}>
-          <Card sx={{ height: '100%' }}>
-            <CardContent>
-              <SourceSelector />
-            </CardContent>
-          </Card>
+    <CssBaseline>
+      <Container>
+        <Typography variant="h2" gutterBottom textAlign="center">
+          CBM Player Demo
+        </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={3}>
+            <Card sx={{ height: '100%' }}>
+              <CardContent>
+                <SourceSelector />
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={9}>
+            <Player src={source} />
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={9}>
-          <Player src={source} />
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </CssBaseline>
   );
 };
 
